@@ -1,0 +1,42 @@
+html, body
+{
+  height: 100%;
+  margin: 0;
+}
+
+body
+{
+background-image: linear-gradient(to right top, #ff0000, #ffe600, #0aff0e, #0055ff, #ff00f2);
+}
+
+.header
+{
+	color: white;font-family: 'Yeon Sung';font-size: 45px;letter-spacing: 5px;margin-top: 80px;
+}
+.header img
+{
+	width: 80px;margin-left: -15px;
+}
+
+.login_div
+{
+	background: rgba(111, 255, 0, 0);float: none;border-radius: 15px;
+}
+
+
+#login_button
+{
+	width: 80%;border-radius: 15px;
+	width:100px;
+	height:40px;
+	font-size: 15px;
+	background-color:greenyellow;
+	color:rgb(8, 62, 13);
+	
+}
+
+.room_name
+{
+	cursor: pointer;
+	font-size: 20px;
+}

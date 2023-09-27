@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clothes Page</title>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="shopping1.css">
+
+</head>
+<body>
+<div class="container">
+<button id="logout" onclick="back();">Back</button>
+	<center>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-11 login_div"></div>
+		<h1 class="header">	
+            <br>
+            <br>
+			Clothes	
+            <br>
+            <br>
+		</h1>
+		<button	onclick="clothes1();" class="btn btn-success"><img src="data:image/jpeg;base64,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" class="tshirt"></button>
+        <br>
+        <br>
+        <button	onclick="clothes2();" class="btn btn-success"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbRSAueGgriUJU6GDP4nOYskomD0W_o5mn8Q&usqp=CAU"class="pants"></button>
+        <br>
+        <br>
+        <button	onclick="clothes3();" class="btn btn-success"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuKg2bFOikft4wYHrXWHIly5VwiFR3hGCPishmpjwYU-NMNC4l1Wym6OXcs68DlbQWPhg&usqp=CAU"class="skirt"></button>
+        <br>
+        <br>
+		<div id="output"></div>
+	</center>
+</div>
+<script src="shopping1.js"></script>
+</body>
+</html>
